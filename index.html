@@ -1,13 +1,14 @@
+
 <!doctype html>
 <html>
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="icon" href="COIN.png" type="image/png" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300&display=swap" rel="stylesheet">
-        <title>
+                <title>
             ريال ألي جنية
         </title>
+                <link rel="icon" href="COIN.png" type="image/png" sizes="16x16">
         <style>
             #input{
                 width:400px;
@@ -65,6 +66,24 @@
             var btn=document.getElementById("btn")
             var div=document.getElementById("div")
             btn.onclick=function (){
+                "use strict";
+                var ريال=input.value;
+                if(ريال==""){
+                    div.innerHTML="can not be empty"
+                }
+                else if(ريال <= 0){
+                    div.innerHTML="ريال can not be less than 0"
+                }
+                else if(isNaN(ريال)){
+                    div.innerHTML="can not be not a number"
+                }
+
+                else{
+                    div.innerHTML="الجنيه يساوي =" +" "+4 *ريال;
+                }
+                
+            }
+            input.onkeyup=function (){
                 "use strict";
                 var ريال=input.value;
                 if(ريال==""){
