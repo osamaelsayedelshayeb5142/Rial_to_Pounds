@@ -67,17 +67,18 @@
             btn.onclick=function (){
                 "use strict";
                 var ريال=input.value;
-                if(ريال <= 0){
+                if(ريال==""){
+                    div.innerHTML="can not be empty"
+                }
+                else if(ريال <= 0){
                     div.innerHTML="ريال can not be less than 0"
                 }
                 else if(isNaN(ريال)){
                     div.innerHTML="can not be not a number"
                 }
-                else if(ريال==""){
-                    div.innerHTML="can not be empty"
-                }
+
                 else{
-                    div.innerHTML="الجنيه يساوي =" +" "+ريال*4;
+                    div.innerHTML="الجنيه يساوي =" +" "+4 *ريال;
                 }
                 
             }
